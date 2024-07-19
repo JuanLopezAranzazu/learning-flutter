@@ -1,4 +1,6 @@
-import 'package:client/presentation/screens/counter_functions_screen.dart';
+import 'package:client/config/router/app_router.dart';
+import 'package:client/config/theme/app_theme.dart';
+// import 'package:client/presentation/screens/counter_functions_screen.dart';
 // import 'package:client/presentation/screens/counter_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,13 +14,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router( // Para el manejo de rutas
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true, // Permite usar Material 3
-        colorSchemeSeed: Colors.purple // Color principal de la aplicación
-      ),
-      home: const CounterFunctionsScreen()
+      theme: AppTheme(isDark: false).theme(),
+      routerConfig: appRouter // Configuración de rutas
     );
   }
 }

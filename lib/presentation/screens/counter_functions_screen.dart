@@ -39,14 +39,16 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
         mainAxisAlignment: MainAxisAlignment.end, // Alineación vertical
         children: [
           CustomButton(
+            heroTag: "button-to-increase",
             icon: Icons.exposure_plus_1,
             onPressed: (){
               setState(() {
                 counter++; // Incrementa la cantidad de clicks
               });
-          }), // Botón personalizado
+            }),// Botón personalizado
           const SizedBox(height: 10,), // Espacio entre los botones
           CustomButton(
+            heroTag: "button-to-decrease",
             icon: Icons.exposure_minus_1,
             onPressed: (){
               setState(() {
